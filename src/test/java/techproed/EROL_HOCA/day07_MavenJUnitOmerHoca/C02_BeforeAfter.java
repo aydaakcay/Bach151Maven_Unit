@@ -1,4 +1,4 @@
-package techproed.OMER_HOCA.day07_MavenJUnitOmerHoca;
+package techproed.EROL_HOCA.day07_MavenJUnitOmerHoca;
 
 import org.junit.After;
 import org.junit.Before;

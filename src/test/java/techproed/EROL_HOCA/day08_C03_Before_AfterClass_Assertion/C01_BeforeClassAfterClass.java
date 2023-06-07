@@ -1,4 +1,4 @@
-package techproed.OMER_HOCA.day08_C03_Before_AfterClass_Assertion;
+package techproed.EROL_HOCA.day08_C03_Before_AfterClass_Assertion;
 
 import org.junit.*;
 public class C01_BeforeClassAfterClass {

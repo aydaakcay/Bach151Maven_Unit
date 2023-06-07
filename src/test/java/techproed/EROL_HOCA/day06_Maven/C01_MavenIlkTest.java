@@ -1,4 +1,4 @@
-package techproed.OMER_HOCA.day06_Maven;
+package techproed.EROL_HOCA.day06_Maven;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
