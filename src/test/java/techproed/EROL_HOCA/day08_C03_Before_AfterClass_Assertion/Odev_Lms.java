@@ -16,14 +16,14 @@ public class Odev_Lms {
 
     /*
     *** Aşağıdaki Task'i Junit framework'u ile yapınız
-- Before methodu ile drive'i olusturup ayarlamalari yapiniz
+   - Before methodu ile drive'i olusturup ayarlamalari yapiniz
             - ebay sayfasına gidiniz
             * www.ebay.com
-- electronics bölümüne tıklayınız
-- Genişliği 225 ve Uzunluğu 225 olan resimlerin hepsine tıklayalım
-- Her sayfanın sayfa başlığını yazdıralım
-- After methodu ile sayfayı kapatalım
-*
+   - electronics bölümüne tıklayınız
+   - Genişliği 225 ve Uzunluğu 225 olan resimlerin hepsine tıklayalım
+   - Her sayfanın sayfa başlığını yazdıralım
+   - After methodu ile sayfayı kapatalım
+
 */
     WebDriver driver;
 
@@ -61,8 +61,9 @@ public class Odev_Lms {
         }
     }
 
-    // After methodu ile sayfayı kapatalım
+
     @After
+    // After methodu ile sayfayı kapatalım
     public void tearDown() throws Exception {
         driver.close();
     }
