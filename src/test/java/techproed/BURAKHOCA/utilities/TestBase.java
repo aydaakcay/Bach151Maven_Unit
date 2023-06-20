@@ -4,7 +4,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -27,9 +30,17 @@ public abstract  class TestBase {
 
     }
 
+    public void visibleWait(WebElement element, int sayi ){
+
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(sayi));
+
+        wait.until(ExpectedConditions.visibilityOf(element));
+
+    }
+
     @After
     public void tearDown() throws Exception {
-        driver.quit();
+        //driver.quit();
     }
 
     //HARD WAIT (Bekleme Methodu)
