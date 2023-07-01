@@ -57,7 +57,7 @@ public class C01_ExtentReport extends TestBase {
             extentTest objesi ile info() methodunu kullanarak her step'de ne yaptığımızla alakalı bilgi yazabiliriz
         testimizin en sonunda testin bittiğini ifade eden pass() methodu ile testimiz ile alakalı son bilgiyi
         ekleyebiliriz.
-            Ve son olarak actions daki perform methodu gibi extentReport objesi ile flush() methodu kullanarak
+            Ve son olarak actions daki perform()  methodu gibi extentReport objesi ile flush() methodu kullanarak
         raporu sonlandırırız
          */
         extentReports.flush();//-->bu methodu kullanmazsak raporumuz oluşmaz
