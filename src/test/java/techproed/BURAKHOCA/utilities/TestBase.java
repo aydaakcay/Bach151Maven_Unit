@@ -52,6 +52,46 @@ public abstract  class TestBase {
 
     }
 
+
+    public  void scroll(WebElement element){
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",element);
+
+    }
+
+
+    public  void  scrollHome(){
+       JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+
+
+
+    public  void scrollEnd(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
+    }
+
+    public void sendKeysJS(WebElement element, String text){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value='" +text+"'",element);
+
+    }
+
+
+    public void sendAttributeJS(WebElement element, String text){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value','"+text+"')",element);
+    }
+
+
+
+
+
+
+
     @After
     public void tearDown() throws Exception {
         //driver.quit();
