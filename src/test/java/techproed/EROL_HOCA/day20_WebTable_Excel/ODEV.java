@@ -24,43 +24,36 @@ public class ODEV  extends TestBase {
     @Test
     public void test01() {
 
-        extentReport("Chrome","Test Raporunun Testi");
+        //ÖDEV
+        extentReport("Chrome", "Raporun Raporu");
 
-
-        //C03_WebTables class'ı için aldığımız rapora gidelim
-        //NOT:driver.get("testOutput/extentReports/extentReport_09_53_35_26062023.html")
-
-        extentTest = extentReports.createTest("Extend Raport","Test Raporu");
-        driver.get("C:\\Users\\Lenovo\\IdeaProjects\\Bach151Maven_Unit\\testOutput\\extentReports\\extentReport_07_10_46_01072023.html");
-        extentTest.info("Rapora Gidildi " );
-
-        bekle(2);
-
-
+        //C01_WebTables class'ı için aldığımız rapora gidelim
+        driver.get(" testOutput/extentReports/extentReport_07_10_46_01072023.html");
+        extentTest.info("Rapora gidildi...");
 
         //Başlığın Extent Report olduğunu test edelim
-        String actual= driver.getTitle();
-        String expected="testReport";
-        Assert.assertEquals(expected, actual);
-
-
-        //Assert.assertEquals("Extend Rapor",driver.getTitle()); Böylede doğrulama yapılabilir
-
-
+        Assert.assertEquals("Extent Report", driver.getTitle());
+        extentTest.info("Başlığın Extent Report olduğunu test edildi");
 
         //Rapor temasını dark yapalım
-        driver.findElement(By.xpath("//*[text()='desktop_windows']")).click();
-
-
-
+        driver.findElement(By.id("theme-selector")).click();
+        extentTest.info("Rapor temasi dark yapildi");
 
         //Dashboard bölümüne gidip tabloyu yazdırınız
-        driver.findElement(By.xpath("(//*[text()='track_changes'])[1]")).click();
-        WebElement tablo =driver.findElement(By.xpath("//*[@id=\"dashboard-view\"]/div/div[3]/div[6]"));
-        System.out.println(tablo.getText());
+        driver.findElement(By.xpath("//*[@class='waves-effect']")).click();
+        WebElement table = driver.findElement(By.xpath("(//table)[3]"));
+        System.out.println(table.getText());
+        extentTest.info("dashboard bolumundeki tablo yazdirildi.");
 
+        //Tester'ın "Emre" olduğunu doğrulayalım
+        WebElement actualData = driver.findElement(By.xpath("(//table)[3]//tr[3]//td[2]"));
+        String actualData1 = actualData.getText();
+        String expectedData = "Emre";
+        Assert.assertEquals(expectedData, actualData1);
+        extentTest.info("Tester'ın Emre olduğu doğrulandi.");
 
-
-
+        //Sayfayı kapatalım
+        extentTest.info("Sayfa kapatildi");
+        extentReports.flush();
     }
 }
